@@ -39,3 +39,10 @@ The RNG is a tiny inline xorshift32. It is good enough for simulation reproducib
 - `step(population, selection, mutation, adjacency, rng)` — functional single-step update. Returns a new population array.
 - `isAbsorbing(population, mutation)` — `true` only when mutation is 0 and the population is monomorphic.
 - `countTypeA(population)` — number of `1` entries.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
