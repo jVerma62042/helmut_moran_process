@@ -1,6 +1,6 @@
 {
   "name": "helmut-moran-process",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Moran process simulator for finite populations with selection, mutation, and graph-structured demographies.",
   "type": "module",
   "main": "src/index.js",
